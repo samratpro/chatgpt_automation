@@ -37,7 +37,11 @@ with sync_playwright() as p:
     def text_generator(prompt):
         # Each time it will take new chat
         try:
-            page.locator("//div[@class='pb-0.5 last:pb-0']//a").click()
+            page.locator("//div[@class='flex items-center gap-2 overflow-hidden juice:gap-0']//button[1]").click()
+        except:
+            pass
+        try:
+            page.locator("//nav[@aria-label='Chat history']/div[2]/div[1]//a").click()
             sleep(2)
         except:
             pass

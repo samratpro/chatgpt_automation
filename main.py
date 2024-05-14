@@ -42,7 +42,7 @@ with sync_playwright() as p:
         except:
             pass
         page.locator("#prompt-textarea").first.fill(prompt)
-        page.locator("""//button[@data-testid='send-button']""").click()
+        page.locator("""//form[@class='w-full']//button""").click()
         sleep(10)
         replay = page.locator("//div[@data-message-author-role='assistant']").first.inner_text()
         return replay
